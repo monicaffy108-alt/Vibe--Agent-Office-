@@ -1,0 +1,22 @@
+{
+  "agents": {
+    "frontend": {
+      "name": "前端工程师",
+      "model": "claude-sonnet-4-6",
+      "apiKey": "sk-gOmX8YRrh2JXrzpM1a402cB1Bf924e849354Cd3b54Da657a",
+      "baseURL": "https://api.openai-next.com"
+    },
+    "backend": {
+      "name": "后端工程师",
+      "model": "claude-opus-4-7",
+      "apiKey": "sk-gOmX8YRrh2JXrzpM1a402cB1Bf924e849354Cd3b54Da657a",
+      "baseURL": "https://api.openai-next.com"
+    },
+    "tester": {
+      "name": "测试工程师",
+      "model": "claude-sonnet-4-6",
+      "apiKey": "sk-gOmX8YRrh2JXrzpM1a402cB1Bf924e849354Cd3b54Da657a",
+      "baseURL": "https://api.openai-next.com"
+    }
+  }
+}

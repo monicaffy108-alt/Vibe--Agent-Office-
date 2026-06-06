@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent 办公室</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1><span class="title-en">Agent</span><span class="title-cn">办公室</span></h1>
+    <p class="subtitle">三个 AI 员工 · 点击工牌编辑模型与 API Key</p>
+  </header>
+
+  <main class="office">
+    <div class="stage">
+      <img class="bg" src="assets/scene/office-bg.png" alt="" />
+
+      <div class="employee" data-agent="frontend" style="--x: 28%;">
+        <img class="character" src="assets/characters/frontend.png" alt="前端工程师" />
+        <div class="bubble" data-bubble hidden></div>
+        <div class="badge" tabindex="0">
+          <div class="badge-clip"></div>
+          <div class="badge-body">
+            <div class="badge-role">前端</div>
+            <div class="badge-model" data-field="model">claude-sonnet-4-6</div>
+            <div class="badge-key" data-field="apiKey">未设置</div>
+          </div>
+        </div>
+        <div class="nameplate">前端工程师</div>
+      </div>
+
+      <div class="employee" data-agent="backend" style="--x: 50%;">
+        <img class="character" src="assets/characters/backend.png" alt="后端工程师" />
+        <div class="bubble" data-bubble hidden></div>
+        <div class="badge" tabindex="0">
+          <div class="badge-clip"></div>
+          <div class="badge-body">
+            <div class="badge-role">后端</div>
+            <div class="badge-model" data-field="model">claude-opus-4-7</div>
+            <div class="badge-key" data-field="apiKey">未设置</div>
+          </div>
+        </div>
+        <div class="nameplate">后端工程师</div>
+      </div>
+
+      <div class="employee" data-agent="tester" style="--x: 72%;">
+        <img class="character" src="assets/characters/tester.png" alt="测试工程师" />
+        <div class="bubble" data-bubble hidden></div>
+        <div class="badge" tabindex="0">
+          <div class="badge-clip"></div>
+          <div class="badge-body">
+            <div class="badge-role">测试</div>
+            <div class="badge-model" data-field="model">claude-haiku-4-5</div>
+            <div class="badge-key" data-field="apiKey">未设置</div>
+          </div>
+        </div>
+        <div class="nameplate">测试工程师</div>
+      </div>
+    </div>
+  </main>
+
+  <section class="taskbar">
+    <input id="taskInput" type="text" placeholder="给三人小组下一个任务,例如:做一个待办清单的小应用" />
+    <button id="taskRun" class="btn-run">开工</button>
+  </section>
+
+  <div class="editor-modal" id="editorModal" hidden>
+    <div class="editor-card">
+      <h2 id="editorTitle">编辑工牌</h2>
+      <label>
+        <span>模型名称</span>
+        <input type="text" id="editorModel" placeholder="例如 claude-sonnet-4-6" />
+      </label>
+      <label>
+        <span>API Key</span>
+        <input type="password" id="editorKey" placeholder="sk-ant-..." />
+      </label>
+      <label>
+        <span>API 地址 (可选,中转/代理填这里)</span>
+        <input type="text" id="editorBase" placeholder="留空走 Anthropic 官方" />
+      </label>
+      <div class="editor-actions">
+        <button id="editorCancel" class="btn-ghost">取消</button>
+        <button id="editorSave" class="btn-primary">保存</button>
+      </div>
+      <p class="editor-hint">保存后写入 config.json</p>
+    </div>
+  </div>
+
+  <footer class="statusbar">
+    <span id="statusText">就绪</span>
+  </footer>
+
+  <aside class="drawer" id="outputDrawer" hidden>
+    <header class="drawer-head">
+      <h3 id="drawerTitle">输出</h3>
+      <button id="drawerClose" class="btn-ghost">关闭</button>
+    </header>
+    <pre id="drawerBody" class="drawer-body"></pre>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
